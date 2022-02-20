@@ -9,7 +9,6 @@ function App() {
     let img = new Image();
     img.crossOrigin = 'anonymous';
     html2canvas(document.querySelector("#invoice")).then(canvas => {
-      // document.body.appendChild(canvas)
       try{
         img.src = canvas.toDataURL('image/png')
         const pdf = new jsPDF('p','mm', 'a4')
@@ -30,9 +29,6 @@ function App() {
         <div className="invoice" id="invoice">
           <div className='row info'>
             <div className='col-md-6'>
-              {/* <div className='row'>
-                  <img className='company-logo' src={require('../src/static/img/logo_size.jpg')}/>
-              </div> */}
               <ul>
                 <li><img className='company-logo' src={require('../src/static/img/logo_size.jpg')}/></li>
                 <li>Company Name</li>
@@ -94,7 +90,7 @@ function App() {
             <div className='col-md-12'>
               <ul className='total'>
                 <li>Subtotal:1000</li>
-                <li>Coupon:-10</li>
+                <li>Coupon:-100</li>
                 <li>Total:900</li>
               </ul>
             </div>
